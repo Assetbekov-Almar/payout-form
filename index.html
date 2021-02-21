@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="b.css">
+	<title>Money Form</title>
+</head>
+<body>
+<form action="/some_php_file.php" id="payout_form" target="_blank" method="POST" autocomplete="off" >
+<div class="from_balance_currency_section payout_form_section"> 
+
+	<div class="description_wrapper">
+		<div class="steps_number" >1</div>
+		<div class="description">
+			<h2 class="full_description">С какого баланса вы хотите вывести деньги?</h2>
+			<h3 class="lite_description">Вывести с баланса:</h3>
+		</div>
+	</div>
+
+	<div class="btn_wrapper">
+		<div class="currency_btn_wrapper ">
+			<input type="radio" id="from_balance_btc" class="currency_btn" name="from_balance_currency" value="BTC">
+			<label for="from_balance_btc" class="from_balance_currency_btn currency_choice_btn">
+				<div class="currency_name">BTC</div>
+				<div class="current_currency_balance">
+					<span class="current_currency_balance_text">Your balance:</span>
+					<div id="btc_current_balance_value">0.0623 BTC</div>
+				</div>
+			</label>
+		</div>
+
+		<div class="currency_btn_wrapper">
+			<input type="radio" id="from_balance_rub" class="currency_btn" name="from_balance_currency" value="RUB">
+			<label for="from_balance_rub" class="from_balance_currency_btn currency_choice_btn">
+				<div class="currency_name">RUB</div>
+				<div class="current_currency_balance">
+					<span class="current_currency_balance_text">Your balance:</span>
+					<div id="rub_balance_value">1200 RUB</div>
+				</div>
+			</label>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="horizontal_separation"></div>
+
+<div class="payment_currency_section payout_form_section">
+
+	<div class="description_wrapper">
+		<div class="steps_number">2</div>
+		<div class="description">
+			<h2 class="full_description">В какой валюте вы хотите получить выплату?</h2>
+			<h3 class="lite_description">Валюта выплаты:</h3>
+		</div>
+	</div>
+
+	<div class="btn_wrapper">
+
+		<div class="currency_btn_wrapper">
+			<input type="radio" id="payment_btc" class="currency_btn" name="payment_currency" value="RUB">
+			<label for="payment_btc" class="payment_currency_btn currency_choice_btn">
+				<div class="currency_name">BTC</div>
+			</label>
+		</div>
+
+		<div class="currency_btn_wrapper">
+			<input type="radio" id="payment_rub" class="currency_btn" name="payment_currency" value="RUB">
+			<label for="payment_rub" class="payment_currency_btn currency_choice_btn">
+				<div class="currency_name">RUB</div>
+			</label>
+		</div>
+
+	</div>
+
+	<div class="horizontal_separation"></div>
+</div>
+
+
+
+<div class="payment_details_section payout_form_section">
+
+	<div class="description_wrapper">
+		<div class="steps_number">3</div>
+		<div class="description">
+			<h3>Детали платежа:</h3>
+		</div>
+	</div>
+
+	<div class="payment_details_wrapper">
+
+		<div class="btc_payment_address input_details">
+			<label for="btc_address">Address:</label>
+			<input type="text" class="payment_details" name="btc_address" id="btc_address">
+		</div>
+		<div class="payment_amount">
+			<div class="btc_all_payment_amount input_details all_payment_amount">
+				<label>All available amount:
+				<input type="checkbox" class="checkbox_all_available_amount" name="btc_all_amount" id="btc_all_amount"><span class="check_btn"></span>
+				</label>
+			</div>
+
+			<div class="btc_payment_amount input_details">
+				<label for="btc_amount">Amount:</label>
+				<input type="number" class="entered_payment_amount payment_details" name="btc_amount" id="btc_amount">
+			</div>
+		</div>
+
+	</div>
+
+	<div class="horizontal_separation"></div>
+	
+	<div class="payment_details_wrapper">
+
+		<div class="rub_payment_system input_details">
+			<label for="rub_system">System:</label>
+			<select id="rub_system" name="rub_system">
+			<option value="select" select="selected">________select_______</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			</select>
+		</div>
+
+		<div class="rub_payment_wallet input_details">
+			<label for="rub_wallet">Wallet:</label>
+			<input type="number" class="payment_details" name="rub_wallet" id="rub_wallet">
+		</div>
+
+		<div class="payment_amount">
+			<div class="rub_all_payment_amount input_details all_payment_amount">
+				<label>All available amount:
+				<input type="checkbox" class="checkbox_all_available_amount" id="rub_all_amount"><span class="check_btn"></span>
+				</label>
+			</div>
+
+			<div class="rub_payment_amount input_details">
+				<label for="rub_amount">Amount:</label>
+				<input type="number" class="entered_payment_amount payment_details" name="rub_amount" id="rub_amount">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="submit_form_section payout_form_section">
+	<button type="submit" name="submit">Submit</button>
+</div>
+
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
